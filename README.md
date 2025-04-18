@@ -45,7 +45,7 @@ ollama serve
 ```python
 MODEL_CONFIG = {
     "local_models": {
-        "deepseek-r1":"deepseek-r1:7b",  # 左侧是显示名称，右侧是Ollama中的模型名称
+        "deepseek-r1":"deepseek-r1:7b",  # 左侧是显示名称，右侧是Ollama中的模型名称,可以把多余的模型配置删除掉
         "qwen2.5-7b-instruct": "yasserrmd/Qwen2.5-7B-Instruct-1M:latest",
         "gemma3-4b": "gemma3:4b",
         "qwen2.5-coder": "qwen2.5-coder:3b"
@@ -117,36 +117,7 @@ RAG_CONFIG = {
 python initialize.py
 ```
 显示初始化完成，且vector_store文件夹下面多了一个*.pkl即为初始化成功！
-3. 运行Web界面：
+4. 运行Web界面：
 ```bash
 streamlit run app.py
 ```
-
-首次运行时会：
-- 自动创建必要的目录结构
-- 处理所有文档并创建向量存储（可能需要一些时间）
-- 显示处理进度和状态信息
-- 完成后自动进入问答界面
-
-### 3. 后续使用
-
-- 系统会自动保存向量存储，下次启动时可以直接使用
-- 可以通过侧边栏选择不同的模型
-- 可以随时清除聊天记录或重置模型上下文
-- 支持启用/禁用RAG检索和重排功能
-
-## 注意事项
-
-1. 首次运行时需要等待文档处理完成，这可能需要一些时间
-2. 确保Ollama服务正在运行，并且已下载所需的模型
-3. 如果修改了配置文件，需要重启应用才能生效
-4. 系统会自动保存向量存储，下次启动时可以直接使用
-5. 如果遇到问题，可以尝试清除模型上下文重新初始化
-
-## 技术栈
-
-- LangChain
-- Ollama
-- FAISS
-- Sentence Transformers
-- Streamlit 
