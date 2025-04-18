@@ -12,9 +12,8 @@
 pip install -r requirements.txt
 ```
 
-2. 
+2. 确保Ollama服务已安装并运行：
 ```bash
-# 确保Ollama服务已安装并运行：
 ollama serve
 ```
 
@@ -60,7 +59,9 @@ ollama list
 
 如果没有安装的话，可以去https://ollama.com/library 进行拉取
 
-嫌麻烦可以直接搞个deepseek-r1:7b就够了，因为我们是课程嘛，而且有本地知识库，直接小模型即可，本地也跑得通！
+嫌麻烦可以直接搞个deepseek-r1:7b就够了
+因为我们是课程嘛，而且有本地知识库，直接小模型即可，本地也跑得通！
+
 ```bash
 ollama pull deepseek-r1:7b
 ```
@@ -80,7 +81,7 @@ VECTOR_STORE_CONFIG = {
 }
 ```
 
-确保已下载所需的嵌入模型和重排模型：
+确保已下载所需的嵌入模型和重排模型：(同理，选择你喜欢的下载即可)
 ```bash
 ollama pull bge-m3:latest
 ollama pull linux6200/bge-reranker-v2-m3:latest
@@ -117,6 +118,7 @@ RAG_CONFIG = {
 python initialize.py
 ```
 显示初始化完成，且vector_store文件夹下面多了一个*.pkl即为初始化成功！
+
 4. 运行Web界面：
 ```bash
 streamlit run app.py
